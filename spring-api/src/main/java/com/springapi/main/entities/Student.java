@@ -1,6 +1,10 @@
 package com.springapi.main.entities;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
+import org.hibernate.annotations.UuidGenerator;
+
+import java.util.UUID;
 
 @Entity
 @Table(
@@ -9,11 +13,8 @@ import jakarta.persistence.*;
 public class Student {
 
   @Id
-  @GeneratedValue(
-    strategy = GenerationType.IDENTITY,
-    generator = "SA_"
-  )
-  private Integer id;
+  @UuidGenerator
+  private UUID id;
 
   @Column
   private String firstName;
@@ -27,20 +28,26 @@ public class Student {
   @Column()
   private Integer age;
 
-  @Column(
-    updatable = false,
-    unique = true
+  @OneToOne(
+    mappedBy = "student",
+    cascade = CascadeType.ALL
   )
-  private String history_trace_id;
+  private StudentProfile studentProfile;
 
-  public Student() {
-  }
+  @ManyToOne()
+  @JoinColumn(
+    name = "school_id"
+  )
+  @JsonBackReference
+  private School school;
 
-  public Integer getId() {
+  public Student() {}
+
+  public UUID getId() {
     return id;
   }
 
-  public void setId(Integer id) {
+  public void setId(UUID id) {
     this.id = id;
   }
 
@@ -74,5 +81,21 @@ public class Student {
 
   public void setAge(Integer age) {
     this.age = age;
+  }
+
+  public School getSchool() {
+    return school;
+  }
+
+  public void setSchool(School school) {
+    this.school = school;
+  }
+
+  public StudentProfile getStudentProfile() {
+    return studentProfile;
+  }
+
+  public void setStudentProfile(StudentProfile studentProfile) {
+    this.studentProfile = studentProfile;
   }
 }
