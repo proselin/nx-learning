@@ -1,4 +1,4 @@
-# SpringShit
+# AngularApp
 
 <a alt="Nx logo" href="https://nx.dev" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="45"></a>
 
@@ -10,27 +10,13 @@ Enhance your Nx experience by installing [Nx Console](https://nx.dev/nx-console)
 provides an interactive UI to view your projects, run tasks, generate code, and more! Available for VSCode, IntelliJ and
 comes with a LSP for Vim users.
 
-## Nx plugins and code generators
+## Start the application
 
-Add Nx plugins to leverage their code generators and automated, inferred tasks.
+Run `npx nx serve angular-app` to start the development server. Happy coding!
 
-```
-# Add plugin
-npx nx add @nx/react
+## Build for production
 
-# Use code generator
-npx nx generate @nx/react:app demo
-
-# Run development server
-npx nx serve demo
-
-# View project details
-npx nx show project demo --web
-```
-
-Run `npx nx list` to get a list of available plugins and whether they have generators. Then run `npx nx list <plugin-name>` to see what generators are available.
-
-Learn more about [code generators](https://nx.dev/features/generate-code) and [inferred tasks](https://nx.dev/concepts/inferred-tasks) in the docs.
+Run `npx nx build angular-app` to build the application. The build artifacts are stored in the output directory (e.g. `dist/` or `build/`), ready to be deployed.
 
 ## Running tasks
 
@@ -69,14 +55,8 @@ It will show tasks that you can run with Nx.
 
 - [Learn more about Exploring the Project Graph](https://nx.dev/core-features/explore-graph)
 
+## Connect with us!
 
-## Project workspaces
-
-### spring-api:
-  - Language: java 17
-  - Framework: Spring
-  - NxNameL: SpringAPI
-
-### angular-app
-  - Language: typescript
-  - Framework: Angular 
+- [Join the community](https://nx.dev/community)
+- [Subscribe to the Nx Youtube Channel](https://www.youtube.com/@nxdevtools)
+- [Follow us on Twitter](https://twitter.com/nxdevtools)
