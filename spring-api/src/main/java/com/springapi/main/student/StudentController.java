@@ -22,15 +22,14 @@ public class StudentController {
 
   @GetMapping("/students")
   @ResponseStatus(HttpStatus.OK)
-  public List<StudentResponseDTO> getAllStudents(
-  ) {
+  public List<StudentResponseDTO> getAllStudents() {
     return studentService.findAll();
   }
 
   @GetMapping("/student/{id}")
   @ResponseStatus(HttpStatus.OK)
-  public Student getStudent(@PathVariable String id) {
-    return studentService.findById(UUID.fromString(id)).orElseThrow();
+  public StudentResponseDTO getStudent(@PathVariable String id) {
+    return studentService.findById(id);
   }
 
 }

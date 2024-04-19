@@ -11,9 +11,8 @@ public class SchoolServiceImp implements SchoolService {
   private final SchoolMapper schoolMapper;
   private final SchoolRepository schoolRepository;
 
-  public SchoolDTO saveSchool(SchoolDTO schoolDTO) {
-    schoolRepository.save(schoolMapper.toSchool(schoolDTO));
-    return schoolDTO;
+  public SchoolResponseDTO saveSchool(SchoolDTO schoolDTO) {
+    return schoolMapper.toResponseSchools(schoolRepository.save(schoolMapper.toSchool(schoolDTO)));
   }
 
   public List<SchoolResponseDTO> getAllSchools() {

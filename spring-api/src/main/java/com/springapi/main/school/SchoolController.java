@@ -1,5 +1,6 @@
 package com.springapi.main.school;
 
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -14,7 +15,7 @@ public class SchoolController {
   private final SchoolService schoolService;
 
   @PostMapping("/school")
-  public SchoolDTO saveSchool(@RequestBody SchoolDTO schoolDTO) {
+  public SchoolResponseDTO saveSchool(@Valid @RequestBody SchoolDTO schoolDTO) {
     return schoolService.saveSchool(schoolDTO);
   }
 
@@ -22,6 +23,4 @@ public class SchoolController {
   public List<SchoolResponseDTO> getAllSchools() {
     return this.schoolService.getAllSchools();
   }
-
-
 }

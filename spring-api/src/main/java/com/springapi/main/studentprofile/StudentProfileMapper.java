@@ -1,4 +1,6 @@
 package com.springapi.main.studentprofile;
 
-public class StudentProfileMapper {
+public interface StudentProfileMapper {
+  StudentProfileResponseDTO toResponseStudentProfile(StudentProfile studentProfile);
+  StudentProfile fromRequestDTO(StudentProfileDTO studentProfileDTO);
 }

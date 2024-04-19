@@ -1,14 +1,16 @@
 package com.springapi.main.school;
 
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.Setter;
-import org.springframework.data.util.Optionals;
-
-import java.util.Optional;
 
 @Getter
 @Setter
 public class SchoolDTO {
+  @NotNull
+  @NotEmpty
+  @NotBlank
   String name;
-  Integer id;
 }

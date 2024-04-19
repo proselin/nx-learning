@@ -3,7 +3,7 @@ package com.springapi.main.school;
 import java.util.List;
 
 public interface SchoolService {
-  SchoolDTO saveSchool(SchoolDTO school);
+  SchoolResponseDTO saveSchool(SchoolDTO school);
 
   List<SchoolResponseDTO> getAllSchools();
 }
